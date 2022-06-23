@@ -1,0 +1,1 @@
+# CommunityPower_EA_DetectVersion
