@@ -69,6 +69,12 @@ function MainConvertVersion ([string]$filePath) {
         $version=$version + ">=2.20"
     }
 
+	#Detect Version 2.21
+	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
+
+	#Detect Version 2.22
+	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
+
 	#Detect Version 2.23
 	#NewDealOnNewBar=true||false||0||true||N
 	#MaxFloatingLoss=0||0||0.000000||0.000000||N
@@ -87,6 +93,9 @@ function MainConvertVersion ([string]$filePath) {
 	if (Select-String -Path $filePath -Quiet -Pattern "NewDealOnNewBar") {
         $version=$version + ">=2.23"
     }
+
+	#Detect Version 2.24
+	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
 
 	#Detect Version 2.25
 	#BigCandle_CloseOn=0||0||0||4||N
@@ -210,6 +219,8 @@ function MainConvertVersion ([string]$filePath) {
         $version=$version + ">=2.28"
     }
 
+	#Detect Version 2.29
+	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
 
 	#Detect Version 2.30
 	#MinStepSize=0||0||0.000000||0.000000||N
@@ -346,6 +357,14 @@ function MainConvertVersion ([string]$filePath) {
 		$version=$version + ">=2.32"
 	}
 
+	#Detect Version 2.33
+	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
+
+	#Detect Version 2.34
+	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
+
+	#Detect Version 2.35
+	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
 
 	#Detect Version 2.36
 	#AutoHedge_MaxOrders=1||1||1||10||N
@@ -441,6 +460,9 @@ function MainConvertVersion ([string]$filePath) {
         $version=$version + ">=2.38"
     }
 
+	#Detect Version 2.39
+	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
+
 	#Detect Version 2.40, 2.41
 	#BinanceTradeConnector_Settings====================================================================================
 	#CustomStartBalance=0||0||0.000000||0.000000||N
@@ -453,6 +475,8 @@ function MainConvertVersion ([string]$filePath) {
         $version=$version + ">=(2.40,2.41)"
     }
 
+	#Detect Version 2.42
+	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
 
 	#Detect Version 2.43.3
 	#Pending_DeleteIfOpposite=false||false||0||true||N
@@ -475,7 +499,6 @@ function MainConvertVersion ([string]$filePath) {
 	if (Select-String -Path $filePath -Quiet -Pattern "BigCandle_MaxSize") {
         $version=$version + ">=2.44"
     }
-
 
 	#Detect Version 2.45
 	#GlobalAccountStopTillTomorrow=false||false||0||true||N
@@ -512,7 +535,7 @@ function MainConvertVersion ([string]$filePath) {
         $version=$version + ">=2.46"
     }
 
-
+	#Detect Version 2.47
 	#SendAlertsToGrammy=true||false||0||true||N
 	#UseOnlyOpenedTrades=true||false||0||true||N
 	#MartingailLotMode=2||0||0||2||N
@@ -520,7 +543,6 @@ function MainConvertVersion ([string]$filePath) {
 	if (Select-String -Path $filePath -Quiet -Pattern "UseOnlyOpenedTrades") {
         $version=$version + ">=2.47"
     }
-
 
 	#Detect Version 2.48
 	#GlobalAccountStopLoss_ccy=0||0||0.000000||0.000000||N
