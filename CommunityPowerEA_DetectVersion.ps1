@@ -1,8 +1,8 @@
-# Script Detect version of CommunityPower EA >= 2.18 to <=2.48
+# Script Detect version of CommunityPower EA >= 2.18 to <= 2.48
 # Drag and drop file settings MT5 to windows form and press button
 #
 # Autor: Ulises Cune (@Ulises2k)
-# v1.0
+# v1.1
 
 
 function MainConvertVersion ([string]$filePath) {
@@ -346,18 +346,16 @@ function MainConvertVersion ([string]$filePath) {
 		$version=$version + ">=2.32"
 	}
 
-	#Detect Version 2.37
+
+	#Detect Version 2.36
 	#AutoHedge_MaxOrders=1||1||1||10||N
 	#AutoHedge_OnDrawDown=0||0||0.000000||0.000000||N
-	#GlobalAccountTrailingStop_ccy=0||5||5||150||N
+	#GlobalAccountTrailingStop_ccy=0||0||0.000000||0.000000||N
 	#GlobalAccountTrailingStop_perc=0||0||0.000000||0.000000||N
-	#Pending_DisableForOpposite=false||false||0||true||N
 	#GlobalTakeProfit_ccy=0||0||0.000000||0.000000||N
 	#GlobalTakeProfit_OnlyLock=false||false||0||true||N
 	#CutomCoefficients=2.2,3.4,4.7
-	#CustomStepCoefficients=
 	#AntiCutomCoefficients=0.95,0.77,0.53
-	#AntiMartingail_AllowTP=false||false||0||true||N
 	#PartialCloseHedge_MainToMain=false||false||0||true||N
 	#PartialCloseHedge_BothWays=false||false||0||true||N
 	#PartialCloseHedge_MaxPrOrders=0||0||1||10||N
@@ -373,7 +371,6 @@ function MainConvertVersion ([string]$filePath) {
 	#TDI_HedgeOn=0||0||0||3||N
 	#MACD_FastMA_Method=1||0||0||9||N
 	#MACD_SlowMA_Method=1||0||0||9||N
-	#MACD_PeriodSignal=9||1||1||30||N
 	#MACD_SignalMA_Method=0||0||0||3||N
 	#MACD_JMA_Phase=0||0||1||10||N
 	#MACD_HedgeOn=0||0||0||3||N
@@ -421,13 +418,20 @@ function MainConvertVersion ([string]$filePath) {
 	#FIBO_HedgeOn=0||0||0||3||N
 	#FIB2_HedgeOn=0||0||0||3||N
 	#News_HedgeOn=0||0||0||3||N
+	if (Select-String -Path $filePath -Quiet -Pattern "AutoHedge_MaxOrders") {
+        $version=$version + ">=2.36"
+    }
+
+	#Detect Version 2.37.2
+	#Pending_DisableForOpposite=false||false||0||true||N
+	#AntiMartingail_AllowTP=false||false||0||true||N
 	#TesterWithdrawal_Header===== Tester withdrawal ====
 	#TesterWithdrawal_Type=0||0||0||2||N
 	#TesterWithdrawal_Frequency=2||0||0||4||N
 	#TesterWithdrawal_Size=50||50||5.000000||500.000000||N
 	#InpEquityRecorder===== Optimization criterion ====
-    if (Select-String -Path $filePath -Quiet -Pattern "CutomCoefficients") {
-        $version=$version + ">=2.37"
+    if (Select-String -Path $filePath -Quiet -Pattern "Pending_DisableForOpposite") {
+        $version=$version + ">=2.37.2"
     }
 
 	#Detect Version 2.38
@@ -437,7 +441,7 @@ function MainConvertVersion ([string]$filePath) {
         $version=$version + ">=2.38"
     }
 
-	#Detect Version 2.40
+	#Detect Version 2.40, 2.41
 	#BinanceTradeConnector_Settings====================================================================================
 	#CustomStartBalance=0||0||0.000000||0.000000||N
 	#ShowVirtualInfoOnChart=false||false||0||true||N
@@ -446,8 +450,9 @@ function MainConvertVersion ([string]$filePath) {
 	#MinMarginLevel1=0||0||0.000000||0.000000||N
 	#GUI_Color_Text=0
     if (Select-String -Path $filePath -Quiet -Pattern "MaxStepSize") {
-        $version=$version + ">=2.40"
+        $version=$version + ">=(2.40,2.41)"
     }
+
 
 	#Detect Version 2.43.3
 	#Pending_DeleteIfOpposite=false||false||0||true||N
@@ -465,12 +470,18 @@ function MainConvertVersion ([string]$filePath) {
         $version=$version + ">=2.43.3"
     }
 
+	#Detect Version 2.44
+	#BigCandle_MaxSize=0||0||0.000000||0.000000||N
+	if (Select-String -Path $filePath -Quiet -Pattern "BigCandle_MaxSize") {
+        $version=$version + ">=2.44"
+    }
+
+
 	#Detect Version 2.45
 	#GlobalAccountStopTillTomorrow=false||false||0||true||N
 	#TrailingIncreaseEvery=0||0||0.000000||0.000000||N
 	#TrailingIncreaseSize=0||0||0.000000||0.000000||N
 	#TrailingMinMaxSize=0||0||0.000000||0.000000||N
-	#BigCandle_MaxSize=0||0||0.000000||0.000000||N
 	#; ADX properties
 	#ADX_Properties====================================================================================
 	#ADX_Type=0||0||0||2||N
@@ -484,7 +495,7 @@ function MainConvertVersion ([string]$filePath) {
 	#ADX_HedgeOn=0||0||0||3||N
 	#ADX_CloseOn=0||0||0||4||N
 	#ADX_PartialCloseOn=0||0||0||3||N
-    if (Select-String -Path $filePath -Quiet -Pattern "BigCandle_MaxSize") {
+    if (Select-String -Path $filePath -Quiet -Pattern "GlobalAccountStopTillTomorrow") {
         $version=$version + ">=2.45"
     }
 
