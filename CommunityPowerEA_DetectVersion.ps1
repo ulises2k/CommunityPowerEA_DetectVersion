@@ -2,7 +2,7 @@
 # Drag and drop file settings MT5 to windows form and press button
 #
 # Autor: Ulises Cune (@Ulises2k)
-# v1.1
+# v1.2
 
 
 function MainConvertVersion ([string]$filePath) {
@@ -70,13 +70,16 @@ function MainConvertVersion ([string]$filePath) {
     }
 
 	#Detect Version 2.21
-	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
+	#CP_MT5_EURUSD_Grid8_v2.21.set
+	#NewDealOnNewBar=false||false||0||true||N
+	if (Select-String -Path $filePath -Quiet -Pattern "NewDealOnNewBar") {
+        $version=$version + ">=2.20"
+    }
 
 	#Detect Version 2.22
 	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
 
 	#Detect Version 2.23
-	#NewDealOnNewBar=true||false||0||true||N
 	#MaxFloatingLoss=0||0||0.000000||0.000000||N
 	#GlobalStopLoss_ccy=0||0||0.000000||0.000000||N
 	#PauseAfterLoss=0||0||1||10||N
@@ -90,12 +93,24 @@ function MainConvertVersion ([string]$filePath) {
 	#TakeProfit_Global========
 	#PartialClose_MinProfit_Perc=0||0||0.000000||0.000000||N
 	#GUI_VisualTest_RefreshSec=0
-	if (Select-String -Path $filePath -Quiet -Pattern "NewDealOnNewBar") {
+	if (Select-String -Path $filePath -Quiet -Pattern "MaxFloatingLoss") {
         $version=$version + ">=2.23"
     }
 
 	#Detect Version 2.24
-	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
+	#Community EURUSD 2 risk 5% coef 1.32 stop lost 225 bon_v2.24.set
+	#FIB2_Properties====================================================================================
+	#FIB2_Type=0||0||0||2||N
+	#FIB2_TF=16385||0||0||49153||N
+	#FIB2_Bars=120||120||1||1200||N
+	#FIB2_Level=61.8||61.8||6.180000||618.000000||N
+	#FIB2_UseClosedBars=true||false||0||true||N
+	#FIB2_OpenOn=0||0||0||3||N
+	#FIB2_MartinOn=0||0||0||3||N
+	#FIB2_CloseOn=0||0||0||4||N
+	if (Select-String -Path $filePath -Quiet -Pattern "FIB2_Type") {
+        $version=$version + ">=2.24"
+    }
 
 	#Detect Version 2.25
 	#BigCandle_CloseOn=0||0||0||4||N
@@ -111,16 +126,7 @@ function MainConvertVersion ([string]$filePath) {
 	#VolFilter_PartialCloseOn=0||0||0||3||N
 	#FIBO_CheckInterval=1||0||0||10||N
 	#FIBO_PartialCloseOn=0||0||0||3||N
-	#FIB2_Properties====================================================================================
-	#FIB2_Type=0||0||0||3||N
-	#FIB2_TF=16385||0||0||49153||N
 	#FIB2_CheckInterval=1||0||0||10||N
-	#FIB2_Bars=120||120||1||1200||N
-	#FIB2_Level=61.8||61.8||6.180000||618.000000||N
-	#FIB2_UseClosedBars=true||false||0||true||N
-	#FIB2_OpenOn=0||0||0||3||N
-	#FIB2_MartinOn=0||0||0||3||N
-	#FIB2_CloseOn=0||0||0||4||N
 	#FIB2_PartialCloseOn=0||0||0||3||N
 	#Time_ApplyTo=1||0||0||3||N
 	#EveryDay_CloseHour=-1||-1||0||23||N
@@ -220,7 +226,29 @@ function MainConvertVersion ([string]$filePath) {
     }
 
 	#Detect Version 2.29
-	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
+	#eurusd_5m_leverage100_roboforex_2_v2.29.3_Beta.set
+	#; News settings
+	#News_Properties================================================================
+	#News_Mode=2||0||0||2||N
+	#News_Currencies=auto
+	#News_Impact_H=true||false||0||true||N
+	#News_Impact_M=true||false||0||true||N
+	#News_Impact_L=true||false||0||true||N
+	#News_Impact_N=false||false||0||true||N
+	#News_FilterInclude=Summit,Speech,Speak,PMI,ECB,BoC,Fed,FED,NFP, payrolls, Payrolls,
+	#News_MinutesBefore=90||30||30||600||Y
+	#News_MinutesAfter=120||30||30||600||Y
+	#News_Draw_Properties===== Visualization ====
+	#News_ShowOnChart=true
+	#News_Style_History=0
+	#News_Style_Future=3
+	#News_Color_ImpactH=255
+	#News_Color_ImpactM=65535
+	#News_Color_ImpactL=32768
+	#News_Color_ImpactN=12632256
+	if (Select-String -Path $filePath -Quiet -Pattern "News_Mode") {
+        $version=$version + ">=2.29"
+    }
 
 	#Detect Version 2.30
 	#MinStepSize=0||0||0.000000||0.000000||N
@@ -270,25 +298,6 @@ function MainConvertVersion ([string]$filePath) {
 	#ZZ_CloseOn=0||0||0||4||N
 	#ZZ_PartialCloseOn=0||0||0||3||N
 	#; Volatility for MA and ZZ Filters distance
-	#; News settings
-	#News_Properties====================================================================================
-	#News_Mode=0||0||0||2||N
-	#News_Currencies=auto
-	#News_Impact_H=true||false||0||true||N
-	#News_Impact_M=true||false||0||true||N
-	#News_Impact_L=false||false||0||true||N
-	#News_Impact_N=false||false||0||true||N
-	#News_FilterInclude=
-	#News_MinutesBefore=15||15||1||150||N
-	#News_MinutesAfter=15||15||1||150||N
-	#News_Draw_Properties===== Visualization ====
-	#News_ShowOnChart=true
-	#News_Style_History=0
-	#News_Style_Future=3
-	#News_Color_ImpactH=255
-	#News_Color_ImpactM=65535
-	#News_Color_ImpactL=32768
-	#News_Color_ImpactN=12632256
 	#Profit_Aggregate=true||false||0||true||N
 	if (Select-String -Path $filePath -Quiet -Pattern "MinStepSize") {
         $version=$version + ">=2.30"
@@ -361,40 +370,33 @@ function MainConvertVersion ([string]$filePath) {
 	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
 
 	#Detect Version 2.34
-	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
-
-	#Detect Version 2.35
-	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
-
-	#Detect Version 2.36
-	#AutoHedge_MaxOrders=1||1||1||10||N
-	#AutoHedge_OnDrawDown=0||0||0.000000||0.000000||N
+	#AutoHedge_MaxOrders=0||1||1||10||N
 	#GlobalAccountTrailingStop_ccy=0||0||0.000000||0.000000||N
 	#GlobalAccountTrailingStop_perc=0||0||0.000000||0.000000||N
-	#GlobalTakeProfit_ccy=0||0||0.000000||0.000000||N
-	#GlobalTakeProfit_OnlyLock=false||false||0||true||N
 	#CutomCoefficients=2.2,3.4,4.7
 	#AntiCutomCoefficients=0.95,0.77,0.53
-	#PartialCloseHedge_MainToMain=false||false||0||true||N
-	#PartialCloseHedge_BothWays=false||false||0||true||N
-	#PartialCloseHedge_MaxPrOrders=0||0||1||10||N
-	#PartialCloseHedge_MinProfit_OppL=0||0||0.000000||0.000000||N
-	#BigCandle_HedgeOn=0||0||0||3||N
+	#PartialCloseHedge_MinProfit=10||0||0.000000||0.000000||N
+	#PartialCloseHedge_MinProfit_Perc=0.5||0||0.000000||0.000000||N
+	#PartialCloseHedge_MinProfit_OppL=95||0||0.000000||0.000000||N
+	if (Select-String -Path $filePath -Quiet -Pattern "AutoHedge_MaxOrders") {
+		$version=$version + ">=2.34"
+	}
+
+	#Detect Version 2.35
+	#Set file: EURUSD_100Cent_Oscillators1_IdentifyTrend_DTrend_FIBO1_v2.35.set
+	#GlobalTakeProfit_ccy=0||0||0.000000||0.000000||N
+	#GlobalTakeProfit_OnlyLock=true||false||0||true||N
 	#Oscillators_UseClosedBars=true||false||0||true||N
-	#Oscillators_HedgeOn=0||0||0||3||N
 	#Oscillator2_UseClosedBars=true||false||0||true||N
-	#Oscillator2_HedgeOn=0||0||0||3||N
 	#Oscillator3_UseClosedBars=true||false||0||true||N
-	#Oscillator3_HedgeOn=0||0||0||3||N
-	#IdentifyTrend_HedgeOn=0||0||0||3||N
-	#TDI_HedgeOn=0||0||0||3||N
+	#Oscillator3_OpenOn=0||0||0||3||N
 	#MACD_FastMA_Method=1||0||0||9||N
 	#MACD_SlowMA_Method=1||0||0||9||N
 	#MACD_SignalMA_Method=0||0||0||3||N
 	#MACD_JMA_Phase=0||0||1||10||N
-	#MACD_HedgeOn=0||0||0||3||N
+	#MACD_Reverse=false||false||0||true||N
 	#; MACD #2 properties
-	#MACD2_Properties====================================================================================
+	#MACD2_Properties====== MACD #2 =====
 	#MACD2_Type=0||0||0||8||N
 	#MACD2_TF=0||0||0||49153||N
 	#MACD2_PeriodFast=12||12||1||120||N
@@ -409,25 +411,40 @@ function MainConvertVersion ([string]$filePath) {
 	#MACD2_UseClosedBars=true||false||0||true||N
 	#MACD2_OpenOn=0||0||0||3||N
 	#MACD2_MartinOn=0||0||0||3||N
-	#MACD2_HedgeOn=0||0||0||3||N
 	#MACD2_CloseOn=0||0||0||4||N
 	#MACD2_PartialCloseOn=0||0||0||3||N
 	#; DTrend properties
-	#DTrend_Properties====================================================================================
-	#DTrend_Type=0||0||0||3||N
-	#DTrend_TF=0||0||0||49153||N
-	#DTrend_PeriodMA1=5||5||1||50||N
-	#DTrend_PeriodMA2=9||9||1||90||N
+	#DTrend_Properties====== DTrend =====
+	#DTrend_Type=1||0||0||3||N
+	#DTrend_TF=5||0||0||49153||N
+	#DTrend_PeriodMA1=9||5||1||50||N
+	#DTrend_PeriodMA2=12||9||1||90||N
 	#DTrend_PeriodD=5||5||1||50||N
 	#DTrend_Scalar=1000000||1000000||100000.000000||10000000.000000||N
 	#DTrend_Level=30||30||3.000000||300.000000||N
 	#DTrend_Reverse=false||false||0||true||N
-	#DTrend_UseClosedBars=false||false||0||true||N
-	#DTrend_OpenOn=0||0||0||3||N
+	#DTrend_UseClosedBars=true||false||0||true||N
+	#DTrend_OpenOn=1||0||0||3||N
 	#DTrend_MartinOn=0||0||0||3||N
-	#DTrend_HedgeOn=0||0||0||3||N
-	#DTrend_CloseOn=0||0||0||4||N
+	#DTrend_CloseOn=2||0||0||4||N
 	#DTrend_PartialCloseOn=0||0||0||3||N
+	if (Select-String -Path $filePath -Quiet -Pattern "GlobalTakeProfit_ccy") {
+		$version=$version + ">=2.35"
+	}
+
+	#Detect Version 2.36
+	#AutoHedge_OnDrawDown=0||0||0.000000||0.000000||N
+	#CustomStepCoefficients=
+	#PartialCloseHedge_MainToMain=false||false||0||true||N
+	#BigCandle_HedgeOn=0||0||0||3||N
+	#Oscillators_HedgeOn=0||0||0||3||N
+	#Oscillator2_HedgeOn=0||0||0||3||N
+	#Oscillator3_HedgeOn=0||0||0||3||N
+	#IdentifyTrend_HedgeOn=0||0||0||3||N
+	#TDI_HedgeOn=0||0||0||3||N
+	#MACD_HedgeOn=0||0||0||3||N
+	#MACD2_HedgeOn=0||0||0||3||N
+	#DTrend_HedgeOn=0||0||0||3||N
 	#PSar_HedgeOn=0||0||0||3||N
 	#MA_Filter_1_HedgeOn=0||0||0||3||N
 	#MA_Filter_2_HedgeOn=0||0||0||3||N
@@ -437,7 +454,7 @@ function MainConvertVersion ([string]$filePath) {
 	#FIBO_HedgeOn=0||0||0||3||N
 	#FIB2_HedgeOn=0||0||0||3||N
 	#News_HedgeOn=0||0||0||3||N
-	if (Select-String -Path $filePath -Quiet -Pattern "AutoHedge_MaxOrders") {
+	if (Select-String -Path $filePath -Quiet -Pattern "AutoHedge_OnDrawDown") {
         $version=$version + ">=2.36"
     }
 
@@ -461,22 +478,28 @@ function MainConvertVersion ([string]$filePath) {
     }
 
 	#Detect Version 2.39
-	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
+	#MaxFloatingLoss1=0||0||0.000000||0.000000||N
+	#MinMarginLevel1=0||0||0.000000||0.000000||N
+	if (Select-String -Path $filePath -Quiet -Pattern "MaxFloatingLoss1") {
+        $version=$version + ">=2.39"
+    }
 
 	#Detect Version 2.40, 2.41
 	#BinanceTradeConnector_Settings====================================================================================
 	#CustomStartBalance=0||0||0.000000||0.000000||N
 	#ShowVirtualInfoOnChart=false||false||0||true||N
 	#SaveVirtualStateOnEveryChange=true||false||0||true||N
-	#MaxFloatingLoss1=0||0||0.000000||0.000000||N
-	#MinMarginLevel1=0||0||0.000000||0.000000||N
 	#GUI_Color_Text=0
-    if (Select-String -Path $filePath -Quiet -Pattern "MaxStepSize") {
+    if (Select-String -Path $filePath -Quiet -Pattern "CustomStartBalance") {
         $version=$version + ">=(2.40,2.41)"
     }
 
 	#Detect Version 2.42
-	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
+	#Set File: EURUSD_100Cent_StochasticK1_IdentifyTrend_TDI_VolFilterWATR_FIBO1_FIBO2_v2.42.set
+	#Pending_DeleteIfOpposite=true||false||0||true||N
+	if (Select-String -Path $filePath -Quiet -Pattern "Pending_DeleteIfOpposite") {
+        $version=$version + ">=2.42"
+    }
 
 	#Detect Version 2.43.3
 	#Pending_DeleteIfOpposite=false||false||0||true||N
@@ -490,7 +513,7 @@ function MainConvertVersion ([string]$filePath) {
 	#ZZ_FillRectangle=false||false||0||true||N
 	#ZZ_ColorUP=11186720
 	#ZZ_ColorDN=17919
-    if (Select-String -Path $filePath -Quiet -Pattern "Pending_DeleteIfOpposite") {
+    if (Select-String -Path $filePath -Quiet -Pattern "PartialClose_AnyToAny") {
         $version=$version + ">=2.43.3"
     }
 

@@ -1,0 +1,513 @@
+; saved on 2021.06.21 15:58:00
+; this file contains input parameters for testing/optimizing CommunityPower MT5 expert advisor
+; to use it in the strategy tester, click Load in the context menu of the Inputs tab
+;
+; Expert properties
+Expert_Properties====== Expert =====
+Expert_Id=234||3040||1||30400||N
+Expert_Comment=CP21.06.2021.15:49
+TradeDirection=0||-1||0||1||N
+Signal_TimeFrame=5||0||0||49153||N
+NewDealOnNewBar=true||false||0||true||N
+MaxFloatingLoss=0||0||0.000000||0.000000||N
+MinMarginLevel=0||0||0.000000||0.000000||N
+UseCustomCommission=8||0||0.000000||0.000000||N
+ManageManual=true||false||0||true||N
+; Lot properties
+Lot_Properties====== Lot =====
+Lot_Type=3||0||0||4||N
+Lot_Per_1000=0.020||0.005||0.005||0.01||N
+Lot_Risk=0.1||0||0.000000||0.000000||N
+Lot_Max=10||0||0.000000||0.000000||N
+Lot_MaxPer1000=0||0||0.000000||0.000000||N
+; Hedge properties
+Hedge_Properties====== Hedge =====
+AllowHedge=false||false||0||true||N
+IncreaseHedge_After=0||0||1||10||N
+IncreaseHedge_Coefficient=1.2||2.5||0.250000||25.000000||N
+IncreaseHedge_Mode=0||0||0||2||N
+AutoHedge_AfterOrder=0||0||1||10||N
+AutoHedge_MaxOrders=0||1||1||10||N
+; Global Account properties
+GlobalAccount_Properties====== Global Account =====
+GlobalAccountTrailingStop_ccy=0||0||0.000000||0.000000||N
+GlobalAccountTrailingStop_perc=0||0||0.000000||0.000000||N
+GlobalAccountTakeProfit_ccy=0||0||0.000000||0.000000||N
+GlobalAccountTakeProfit_perc=0||0||0.000000||0.000000||N
+GlobalAccountTargetProfit_ccy=0||0||0.000000||0.000000||N
+GlobalAccountTargetProfit_perc=0||0||0.000000||0.000000||N
+; Volatility for all parameters nominated in points
+VolPV_Properties====== Volatility for all parameters nominated in points =====
+VolPV_Type=0||0||0||5||N
+VolPV_TF=16408||0||0||49153||N
+VolPV_Period=14||20||1||200||N
+VolPV_MinSize=0||0||0.000000||0.000000||N
+VolPV_MaxSize=0||0||0.000000||0.000000||N
+; Pending entry properties
+Pending_Properties====== Pending entry =====
+Pending_Type=1||0||0||2||N
+Pending_Distance=3||0||5||20||N
+Pending_Bar=0||0||1||5||N
+Pending_TrailMode=2||1||0||2||N
+Pending_CancelOnOpposite=true||false||0||true||N
+Pending_CancelDistance=0||0||1||200.000000||N
+Pending_CancelBar=0||0||1||10||N
+Pending_Distance_ModeP=0||0||0||1||N
+; StopLoss properties
+StopLoss_Properties====== StopLoss =====
+StopLoss=250000||150||10||300||N
+StopLoss_Mode=1||0||0||2||N
+StopLoss_ModeP=0||0||0||1||N
+StopLoss_Global====== Summ StopLoss (buy + sell) =====
+GlobalStopLoss_ccy=0||0||0.000000||0.000000||N
+GlobalStopLoss=0||0||1.000000||50.000000||N
+StopLoss_Pause====== Pause after loss =====
+PauseAfterLoss=0||0||1||10||N
+UseVirtualSL=false||false||0||true||N
+; TakeProfit properties
+TakeProfit_Properties=========== TakeProfit ==========
+TakeProfit=3||30||5||70||Y
+TakeProfitMode=0||0||0||1||N
+TakeProfit_ModeP=0||0||0||1||N
+TakeProfit_ReduceAfter====== Reduce TakeProfit after minutes =====
+TakeProfit_ReduceAfter_mins=0||0||5||30||N
+TakeProfit_ReduceAfter_coeff=0.1||0.1||0.1||2||N
+TakeProfit_ReduceSeries====== Reduce TakeProfit for every order =====
+TakeProfit_ReduceSize=0||0||0.000000||0.000000||N
+TakeProfit_ReduceCoeff=1||1||0.100000||10.000000||N
+TakeProfit_MinSize=0||0||0.000000||0.000000||N
+TakeProfit_Global====== Summ TakeProfit (buy + sell) =====
+GlobalTakeProfit=0||0||0.000000||0.000000||N
+MinProfitToClose_Properties====== Min profit to close on signal =====
+MinProfitToClose=0||0||1||20||N
+MinProfitToClose_ModeP=0||0||0||1||N
+UseVirtualTP=false||false||0||true||N
+; TrailingStop properties
+TrailingStop_Properties====== TrailingStop =====
+TrailingStop=0||10||10||40||N
+TrailingStep=0||10||10||40||N
+TrailingStopAfter=0||10||10||40||N
+TrailingStopMode=0||0||0||1||N
+TrailingStop_ModeP=0||0||0||1||N
+; Martingail properties
+Martingail_Properties====== Martingail =====
+MartingailType=1||2||0||3||N
+MaxTrades=6||1||1||10||N
+MartingailOnTheBarEnd=true||false||0||true||N
+MinPause_Bars=0||0||1||10||N
+MartingailLotMode=2||0||0||2||N
+LotExponent=1.42||1.5||0.25||2||N
+CutomCoefficients=2.2,3.4,4.7
+PipStep=5||0||5||50||N
+Martingail_ModeP=0||0||0||1||N
+StepCoeff=1||0||0.1||2||N
+MinStepSize=0||0||0.000000||0.000000||N
+BreakEven_AfterOrder=0||0||1||10||N
+BreakEven_MinProfit=0||0||1||20||N
+BE_Alert_After=0||3||1||30||N
+GlobalMartingail_Properties====== Apply martin to the new deals =====
+ApplyAfterClosedLoss=false||false||0||true||N
+; Anti-Martingail properties
+AntiMartingail_Properties====== AntiMartingail =====
+AntiMartingailType=0||0||0||3||N
+AntiMaxTrades=10||10||1||100||N
+AntiMartingailLotMode=2||0||0||2||N
+AntiLotExponent=0.9||0.9||0.090000||9.000000||N
+AntiCutomCoefficients=0.95,0.77,0.53
+AntiPipStep=15||15||1.500000||150.000000||N
+AntiMartingail_ModeP=0||0||0||1||N
+AntiStepCoeff=0.9||0.9||0.090000||9.000000||N
+AntiMinStepSize=0||0||0.000000||0.000000||N
+AntiStopLoss=10||10||1.000000||100.000000||N
+AntiStopLoss_ReduceSize=0||0||0.000000||0.000000||N
+AntiStopLoss_ReduceCoeff=1||1||0.100000||10.000000||N
+AntiStopLoss_MinSize=5||5||0.500000||50.000000||N
+AntiStopLoss_Mode=1||0||0||1||N
+AntiStopLoss_ModeP=0||0||0||1||N
+AllowBoth_Properties====== Allow both Martin and Anti-martin =====
+AllowBothMartinAndAntiMartin=false||false||0||true||N
+; Partial close properties
+PartialClose_Properties====== Partial Close =====
+PartialClose_After=0||0||1||10||N
+PartialClose_MinProfit=1||0||1||20||N
+PartialClose_MinProfit_Perc=0||0||1||20||N
+PartialClose_MinPercent=95||100||10.000000||1000.000000||N
+PartialCloseHedge_After=0||0||1||10||N
+PartialCloseHedge_BothWays=true||false||0||true||N
+PartialCloseHedge_MaxPrOrders=0||0||1||10||N
+PartialCloseHedge_MinProfit=10||0||0.000000||0.000000||N
+PartialCloseHedge_MinProfit_Perc=0.5||0||0.000000||0.000000||N
+PartialCloseHedge_MinProfit_OppL=95||0||0.000000||0.000000||N
+PartialCloseHedge_MinPercent=100||100||10.000000||1000.000000||N
+; Big candle properties
+BigCandle_Properties====== Big candle =====
+BigCandle_Type=0||0||0||3||N
+BigCandle_MinSize=20||100||10.000000||1000.000000||N
+BigCandle_TF=0||0||0||49153||N
+BigCandle_CurrentBar=true||false||0||true||N
+BigCandle_OpenOn=0||0||0||3||N
+BigCandle_MartinOn=0||0||0||3||N
+BigCandle_CloseOn=0||0||0||4||N
+BigCandle_PartialCloseOn=0||0||0||3||N
+; Oscillator #1 properties
+Oscillators_Properties====== Oscillator #1 =====
+Oscillators_Type=3||1||0||3||N
+Oscillators_Indicator=1||0||0||3||N
+Oscillators_TF=5||0||0||16388||N
+Oscillators_Period=14||1||1||30||N
+Oscillators_Price=1||1||0||7||N
+Oscillators_MA_Period=3||3||1||30||N
+Oscillators_MA_Method=0||0||0||3||N
+Oscillators_Slowing=3||3||1||30||N
+Oscillators_STO_Price=0||0||0||1||N
+Oscillators_Level_UP_Min=-10||60||5||95||N
+Oscillators_Level_DN_Min=-999||-999||-99.900000||-9990.000000||N
+Oscillators_ContrTrend=false||false||0||true||N
+Oscillators_OpenOn=0||0||0||3||N
+Oscillators_MartinOn=0||0||0||3||N
+Oscillators_CloseOn=2||0||0||4||N
+Oscillators_PartialCloseOn=3||0||0||3||N
+; Oscillator #2 properties
+Oscillator2_Properties====== Oscillator #2 =====
+Oscillator2_Type=0||1||0||3||N
+Oscillator2_Indicator=0||0||0||3||N
+Oscillator2_TF=5||0||0||16390||N
+Oscillator2_Period=14||5||4||21||N
+Oscillator2_Price=1||1||0||7||N
+Oscillator2_MA_Period=3||0||5||50||N
+Oscillator2_MA_Method=0||0||0||3||N
+Oscillator2_Slowing=3||3||1||30||N
+Oscillator2_STO_Price=0||0||0||1||N
+Oscillator2_Level_UP_Min=-10||100||50||200||N
+Oscillator2_Level_DN_Min=-999||-999||-99.900000||-9990.000000||N
+Oscillator2_ContrTrend=false||false||0||true||N
+Oscillator2_OpenOn=0||0||0||3||N
+Oscillator2_MartinOn=0||0||0||3||N
+Oscillator2_CloseOn=0||0||0||2||N
+Oscillator2_PartialCloseOn=0||0||0||3||N
+; Oscillator #3 properties
+Oscillator3_Properties====== Oscillator #3 =====
+Oscillator3_Type=0||0||0||4||N
+Oscillator3_Indicator=0||0||0||4||N
+Oscillator3_TF=16385||0||0||49153||N
+Oscillator3_Period=14||14||1||140||N
+Oscillator3_Price=1||1||0||7||N
+Oscillator3_MA_Period=3||3||1||30||N
+Oscillator3_MA_Method=0||0||0||3||N
+Oscillator3_Slowing=3||3||1||30||N
+Oscillator3_STO_Price=0||0||0||1||N
+Oscillator3_Level_UP_Min=80||80||8.000000||800.000000||N
+Oscillator3_Level_DN_Min=-999||-999||-99.900000||-9990.000000||N
+Oscillator3_ContrTrend=false||false||0||true||N
+Oscillator3_OpenOn=2||0||0||3||N
+Oscillator3_MartinOn=0||0||0||3||N
+Oscillator3_CloseOn=0||0||0||4||N
+Oscillator3_PartialCloseOn=0||0||0||3||N
+; IdentifyTrend properties
+IdentifyTrend_Properties====== IdentifyTrend =====
+IdentifyTrend_Enable=true||false||0||true||N
+IdentifyTrend_TF=16408||0||0||16390||N
+IdentifyTrend_AppliedPrice=5||1||0||7||N
+IdentifyTrend_MainPeriod=3||2||1||5||N
+IdentifyTrend_Reverse=false||false||0||true||N
+IdentifyTrend_UseClosedBars=false||false||0||true||N
+IdentifyTrend_OpenOn=2||0||0||3||N
+IdentifyTrend_MartinOn=0||0||0||3||N
+IdentifyTrend_CloseOn=0||0||0||4||N
+IdentifyTrend_PartialCloseOn=0||0||0||3||N
+; TDI properties
+TDI_Properties====== TDI =====
+TDI_Mode=1||0||0||1||N
+TDI_TF=15||0||0||49153||N
+TDI_SignalLevel=50||18||16||98||N
+TDI_PeriodRSI=21||21||1||210||N
+TDI_AppliedPriceRSI=1||1||0||7||N
+TDI_PeriodSmRSI=2||2||1||20||N
+TDI_MethodSmRSI=0||0||0||3||N
+TDI_PeriodSmSig=7||7||1||70||N
+TDI_MethodSmSig=0||0||0||3||N
+TDI_PeriodVolBand=34||34||1||340||N
+TDI_StdDev=1.6185||1.6185||0.161850||16.185000||N
+TDI_Reverse=true||false||0||true||N
+TDI_UseClosedBars=true||false||0||true||N
+TDI_OpenOn=2||0||0||3||N
+TDI_MartinOn=0||0||0||3||N
+TDI_CloseOn=0||0||0||4||N
+TDI_PartialCloseOn=0||0||0||3||N
+; MACD properties
+MACD_Properties====== MACD =====
+MACD_Type=0||0||0||3||N
+MACD_TF=2||0||0||49153||N
+MACD_PeriodFast=70||12||1||120||N
+MACD_PeriodSlow=180||27||1||270||N
+MACD_PeriodSignal=5||9||1||90||N
+MACD_Price=1||1||0||7||N
+MACD_Reverse=true||false||0||true||N
+MACD_UseClosedBars=true||false||0||true||N
+MACD_OpenOn=0||0||0||3||N
+MACD_MartinOn=0||0||0||3||N
+MACD_CloseOn=0||0||0||4||N
+MACD_PartialCloseOn=0||0||0||3||N
+; Parabolic SAR properties
+PSar_Properties====== SAR =====
+PSar_Type=0||1||0||2||Y
+PSar_TF=16385||16385||0||16408||Y
+PSar_Step=0.012||0.02||0.002000||0.200000||N
+PSar_Maximum=0.12||0.2||0.020000||2.000000||N
+PSar_Reverse=false||false||0||true||N
+PSar_OpenOn=0||0||0||3||N
+PSar_MartinOn=0||0||0||3||N
+PSar_CloseOn=0||0||0||4||N
+PSar_PartialCloseOn=0||0||0||3||N
+; MA Filter #1 properties
+MA_Filter_1_Properties====== MA Filter #1 =====
+MA_Filter_1_Type=1||0||0||2||N
+MA_Filter_1_TF=30||0||0||49153||N
+MA_Filter_1_Period=20||20||5||100||N
+MA_Filter_1_Method=0||0||0||3||N
+MA_Filter_1_Price=7||1||0||7||N
+MA_Filter_1_DistType=1||0||0||1||N
+MA_Filter_1_DistCoef=2||25||25||75||N
+MA_Filter_1_OpenOn=2||0||0||3||N
+MA_Filter_1_MartinOn=0||0||0||3||N
+MA_Filter_1_CloseOn=0||0||0||4||N
+MA_Filter_1_PartialCloseOn=0||0||0||3||N
+; MA Filter #2 properties
+MA_Filter_2_Properties====== MA Filter #2 =====
+MA_Filter_2_Type=0||0||0||2||N
+MA_Filter_2_TF=0||15||0||16385||N
+MA_Filter_2_Period=50||0||50||300||N
+MA_Filter_2_Method=1||0||0||3||N
+MA_Filter_2_Price=1||1||0||7||N
+MA_Filter_2_DistType=0||0||0||1||N
+MA_Filter_2_DistCoef=0||0||0.000000||0.000000||N
+MA_Filter_2_OpenOn=0||0||0||3||N
+MA_Filter_2_MartinOn=0||0||0||3||N
+MA_Filter_2_CloseOn=0||0||0||4||N
+MA_Filter_2_PartialCloseOn=0||0||0||3||N
+; MA Filter #3 properties
+MA_Filter_3_Properties====== MA Filter #3 =====
+MA_Filter_3_Type=0||0||0||2||N
+MA_Filter_3_TF=0||16392||0||16396||N
+MA_Filter_3_Period=50||0||100||100||N
+MA_Filter_3_Method=1||0||0||3||N
+MA_Filter_3_Price=1||1||0||7||N
+MA_Filter_3_DistType=0||0||0||1||N
+MA_Filter_3_DistCoef=0||0||0.000000||0.000000||N
+MA_Filter_3_OpenOn=0||0||0||3||N
+MA_Filter_3_MartinOn=0||0||0||3||N
+MA_Filter_3_CloseOn=0||0||0||4||N
+MA_Filter_3_PartialCloseOn=0||0||0||3||N
+; ZZ properties
+ZZ_Properties====== ZigZag =====
+ZZ_Type=0||0||0||4||N
+ZZ_TF=0||0||0||49153||N
+ZZ_Period=12||12||1||120||N
+ZZ_MinAmplitude=10||10||1||100||N
+ZZ_MinMotion=0||0||1||10||N
+ZZ_DistanceType=0||0||0||2||N
+ZZ_SignalDistCoeff=0||0||0.000000||0.000000||N
+ZZ_Reverse=false||false||0||true||N
+ZZ_UseClosedBars=false||false||0||true||N
+ZZ_OpenOn=0||0||0||3||N
+ZZ_MartinOn=0||0||0||3||N
+ZZ_CloseOn=0||0||0||4||N
+ZZ_PartialCloseOn=0||0||0||3||N
+; Volatility for MA and ZZ Filters distance
+VolMA_Properties====== Volatility for MA and ZigZag Filters distance =====
+VolMA_Type=2||0||0||4||N
+VolMA_TF=30||0||0||49153||N
+VolMA_Period=20||20||5||100||N
+; Volatility Filter properties
+VolFilter_Properties====== Volatility Filter =====
+VolFilter_Type=0||0||0||4||N
+VolFilter_TF=0||0||0||16408||N
+VolFilter_Period=20||8||6||38||N
+VolFilter_Min=0||1||5||30||N
+VolFilter_Max=0||0||0.000000||0.000000||N
+VolFilter_Smoothing_Mode=0||0||0||2||N
+VolFilter_Smoothing_Period=20||50||100||150||N
+VolFilter_OpenOn=0||0||0||3||N
+VolFilter_MartinOn=0||0||0||3||N
+VolFilter_CloseOn=0||0||0||4||N
+VolFilter_PartialCloseOn=0||0||0||3||N
+; FIBO #1 properties
+FIBO_Properties====== FIBO #1 =====
+FIBO_Type=0||0||0||1||N
+FIBO_TF=16385||0||0||49153||N
+FIBO_CheckInterval=1||0||0||10||N
+FIBO_Bars=120||120||1||1200||N
+FIBO_Level=61.8||61.8||6.180000||618.000000||N
+FIBO_UseClosedBars=true||false||0||true||N
+FIBO_OpenOn=0||0||0||3||N
+FIBO_MartinOn=0||0||0||3||N
+FIBO_CloseOn=0||0||0||4||N
+FIBO_PartialCloseOn=0||0||0||3||N
+; FIBO #2 properties
+FIB2_Properties====== FIBO #2 =====
+FIB2_Type=0||0||0||3||N
+FIB2_TF=16385||0||0||49153||N
+FIB2_CheckInterval=1||0||0||10||N
+FIB2_Bars=120||120||1||1200||N
+FIB2_Level=61.8||61.8||6.180000||618.000000||N
+FIB2_UseClosedBars=true||false||0||true||N
+FIB2_OpenOn=0||0||0||3||N
+FIB2_MartinOn=0||0||0||3||N
+FIB2_CloseOn=0||0||0||4||N
+FIB2_PartialCloseOn=0||0||0||3||N
+; Spread settings
+Spread_Settings====== Spread =====
+Spread_MaxCurrent=0||0||0.000000||0.000000||N
+Spread_MaxAverage=0||0||0.000000||0.000000||N
+Spread_SecondsToAnalyze=30||30||1||300||N
+; Time settings
+Time_Settings====== Time =====
+Time_ApplyTo=0||0||0||3||N
+Time_DST_Mode=1||0||0||4||N
+Time_Manual_GMT_Offset=2||2||1||20||N
+; Every Day
+EveryDay_Properties===== Every Day ====
+EveryDay_StartHour=2||-1||0||23||N
+EveryDay_StartMinute=11||0||0||55||N
+EveryDay_EndHour=23||-1||0||23||N
+EveryDay_EndMinute=0||0||0||59||N
+EveryDay_CloseHour=-1||-1||0||23||N
+EveryDay_CloseMinute=0||0||0||55||N
+; Friday and Monday
+FridayMonday_Properties===== Friday and Monday ====
+FridayStop_Hour=-1||-1||0||23||N
+FridayStop_Minute=0||0||0||55||N
+FridayClose_Hour=-1||-1||0||23||N
+FridayClose_Minute=0||0||0||55||N
+MondayStart_Hour=-1||-1||0||23||N
+MondayStart_Minute=0||0||0||55||N
+; Custom Schedule
+Custom_Schedule_Properties====== Custom Schedule =====
+Custom_Schedule_On=false||false||0||true||N
+Monday_StartHour=-1||-1||0||23||N
+Monday_StartMinute=0||0||0||55||N
+Monday_EndHour=-1||-1||0||23||N
+Monday_EndMinute=0||0||0||55||N
+Tuesday_StartHour=-1||-1||0||23||N
+Tuesday_StartMinute=0||0||0||55||N
+Tuesday_EndHour=-1||-1||0||23||N
+Tuesday_EndMinute=0||0||0||55||N
+Wednesday_StartHour=-1||-1||0||23||N
+Wednesday_StartMinute=0||0||0||55||N
+Wednesday_EndHour=-1||-1||0||23||N
+Wednesday_EndMinute=0||0||0||55||N
+Thursday_StartHour=-1||-1||0||23||N
+Thursday_StartMinute=0||0||0||55||N
+Thursday_EndHour=-1||-1||0||23||N
+Thursday_EndMinute=0||0||0||55||N
+Friday_StartHour=-1||-1||0||23||N
+Friday_StartMinute=0||0||0||55||N
+Friday_EndHour=-1||-1||0||23||N
+Friday_EndMinute=0||0||0||55||N
+; New Year Holidays
+NewYear_Properties====== New Year Holidays =====
+LastDecemberDay=15||0||1||10||N
+FirstJanuaryDay=15||0||1||10||N
+; News settings
+News_Properties====== News =====
+News_Mode=0||0||0||2||N
+News_Currencies=auto
+News_Impact_H=true||false||0||true||N
+News_Impact_M=true||false||0||true||N
+News_Impact_L=false||false||0||true||N
+News_Impact_N=false||false||0||true||N
+News_FilterInclude=
+News_MinutesBefore=15||15||1||150||N
+News_MinutesAfter=15||15||1||150||N
+News_OpenOn=0||0||0||3||N
+News_MartinOn=0||0||0||3||N
+News_CloseOn=0||0||0||4||N
+News_PartialCloseOn=0||0||0||3||N
+News_Draw_Properties====== Visualization =====
+News_ShowOnChart=true
+News_Style_History=0
+News_Style_Future=3
+News_Color_ImpactH=255
+News_Color_ImpactM=65535
+News_Color_ImpactL=32768
+News_Color_ImpactN=12632256
+; Lines settings
+Lines_Settings====== Lines =====
+NextOrder_Width=1
+NextOrder_Style=2
+NextOrder_ColorB=3329330
+NextOrder_ColorS=17919
+StopLoss_Width=1
+StopLoss_Style=1
+StopLoss_ColorB=16711935
+StopLoss_ColorS=16711935
+BreakEven_Width=1
+BreakEven_Style=4
+BreakEven_ColorB=3329330
+BreakEven_ColorS=17919
+TakeProfit_Width=2
+TakeProfit_Style=3
+TakeProfit_ColorB=65280
+TakeProfit_ColorS=255
+; GUI settings
+GUI_Settings=========== GUI ==========
+GUI_Enabled=false
+GUI_FontName=Segoe UI
+GUI_Window_Alpha=255
+GUI_ShowSignals=true
+GUI_Color_Signal=13350833
+GUI_Color_SignalText=0
+GUI_Color_B_Back=16777184
+GUI_Color_B_Button=15130800
+GUI_Color_B_ButtonP=16748574
+GUI_Color_B_Border=15570276
+GUI_Color_B_Text=0
+GUI_Color_S_Back=16118015
+GUI_Color_S_Button=12695295
+GUI_Color_S_ButtonP=17919
+GUI_Color_S_Border=8421616
+GUI_Color_S_Text=0
+; Show orders
+ShowOrders_Settings=========== Show Orders ==========
+Show_Opened=1||0||0||3||N
+Show_Closed=true||false||0||true||N
+Show_Pending=true||false||0||true||N
+MaxHistoryDeals=1
+Color_Properties=========== Main Color ==========
+Color_B_Open=16748574
+Color_B=16748574
+Color_B_Loss=15130800
+Color_S_Open=17919
+Color_S=17919
+Color_S_Loss=12695295
+Profit_Properties=========== TakeProfit ==========
+Profit_ShowInMoney=true||false||0||true||N
+Profit_ShowInPoints=true||false||0||true||N
+Profit_ShowInPercents=true||false||0||true||N
+Profit_Aggregate=true||false||0||true||N
+ProfitDigitsToShow=1||1||1||10||N
+Font=Arial
+FontSize=9||9||1||90||N
+Style_Properties=========== Style ==========
+Open_Close_Line_Width=1||1||1||10||N
+Open_Close_Line_Style=2||0||0||4||N
+Open_PriceLabel_Width=1||0||1||10||N
+Close_PriceLabel_Width=1||0||1||10||N
+SL_TP_Dashes_Show=true||false||0||true||N
+SL_TP_Lines_Width=2||0||1||10||N
+SL_TP_Lines_Style=2||0||0||4||N
+Expiration_Width=0||0||1||10||N
+Expiration_Style=2||0||0||4||N
+; Notifications settings
+Notifications_Settings====== Notifications =====
+MessagesToGrammy=false||false||0||true||N
+Alerts_Enabled=false
+Sounds_Enabled=false
+Sounds_OpenFirst=expert.wav
+Sounds_OpenMartin=alert2.wav
+Sounds_OpenAntiMartin=alert2.wav
+Sounds_Close=alert.wav
+; Optimization settings
+Optimization_Settings====== Optimization =====
+InpEquityRecorderType=1
+InpEquityRecorderCorr=0
