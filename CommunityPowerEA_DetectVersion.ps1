@@ -73,7 +73,7 @@ function MainConvertVersion ([string]$filePath) {
 	#CP_MT5_EURUSD_Grid8_v2.21.set
 	#NewDealOnNewBar=false||false||0||true||N
 	if (Select-String -Path $filePath -Quiet -Pattern "NewDealOnNewBar") {
-        $version=$version + ">=2.20"
+        $version=$version + ">=2.21"
     }
 
 	#Detect Version 2.22
@@ -363,7 +363,7 @@ function MainConvertVersion ([string]$filePath) {
 	#PartialCloseHedge_MinProfit_Perc=0||0||0.000000||0.000000||N
 	#PartialCloseHedge_MinPercent=100||100||10.000000||1000.000000||N
 	if (Select-String -Path $filePath -Quiet -Pattern "Lot_MaxPer1000") {
-		$version=$version + ">=2.32"
+		$version=$version + ">=2.32.4"
 	}
 
 	#Detect Version 2.33
