@@ -36,7 +36,7 @@ function MainConvertVersion ([string]$filePath) {
 	#VolFilter_OpenOn=0||0||0||3||N
 	#FIBO_OpenOn=0||0||0||3||N
 	#GUI_Window_Alpha=255
-    if (Select-String -Path $filePath -Quiet -Pattern "MartingailOnSignal") {
+    if (Select-String -Path $filePath -Quiet -Pattern "Oscillators_OpenOn") {
         $version=$version + ">=2.19"
     }
 
@@ -229,15 +229,15 @@ function MainConvertVersion ([string]$filePath) {
 	#eurusd_5m_leverage100_roboforex_2_v2.29.3_Beta.set
 	#; News settings
 	#News_Properties================================================================
-	#News_Mode=2||0||0||2||N
+	#News_Mode=0||0||0||2||N
 	#News_Currencies=auto
 	#News_Impact_H=true||false||0||true||N
 	#News_Impact_M=true||false||0||true||N
 	#News_Impact_L=true||false||0||true||N
 	#News_Impact_N=false||false||0||true||N
-	#News_FilterInclude=Summit,Speech,Speak,PMI,ECB,BoC,Fed,FED,NFP, payrolls, Payrolls,
-	#News_MinutesBefore=90||30||30||600||Y
-	#News_MinutesAfter=120||30||30||600||Y
+	#News_FilterInclude=
+	#News_MinutesBefore=15||30||30||600||Y
+	#News_MinutesAfter=15||30||30||600||Y
 	#News_Draw_Properties===== Visualization ====
 	#News_ShowOnChart=true
 	#News_Style_History=0
