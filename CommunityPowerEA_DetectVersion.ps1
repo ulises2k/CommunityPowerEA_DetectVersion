@@ -307,7 +307,7 @@ function MainConvertVersion ([string]$filePath) {
 	#MinMarginLevel=0
 	#; Volatility for all parameters nominated in points
 	#VolPV_Properties====================================================================================
-	#VolPV_Type=1||0||0||5||N
+	#VolPV_Type=0||0||0||5||N
 	#VolPV_TF=16408||0||0||49153||N
 	#VolPV_Period=20||20||1||200||N
 	#VolPV_MinSize=0||0||0.000000||0.000000||N
@@ -415,8 +415,8 @@ function MainConvertVersion ([string]$filePath) {
 	#MACD2_PartialCloseOn=0||0||0||3||N
 	#; DTrend properties
 	#DTrend_Properties====== DTrend =====
-	#DTrend_Type=1||0||0||3||N
-	#DTrend_TF=5||0||0||49153||N
+	#DTrend_Type=0||0||0||3||N
+	#DTrend_TF=0||0||0||49153||N
 	#DTrend_PeriodMA1=9||5||1||50||N
 	#DTrend_PeriodMA2=12||9||1||90||N
 	#DTrend_PeriodD=5||5||1||50||N
@@ -424,9 +424,9 @@ function MainConvertVersion ([string]$filePath) {
 	#DTrend_Level=30||30||3.000000||300.000000||N
 	#DTrend_Reverse=false||false||0||true||N
 	#DTrend_UseClosedBars=true||false||0||true||N
-	#DTrend_OpenOn=1||0||0||3||N
+	#DTrend_OpenOn=0||0||0||3||N
 	#DTrend_MartinOn=0||0||0||3||N
-	#DTrend_CloseOn=2||0||0||4||N
+	#DTrend_CloseOn=0||0||0||4||N
 	#DTrend_PartialCloseOn=0||0||0||3||N
 	if (Select-String -Path $filePath -Quiet -Pattern "GlobalTakeProfit_ccy") {
 		$version=$version + ">=2.35"
@@ -502,7 +502,6 @@ function MainConvertVersion ([string]$filePath) {
     }
 
 	#Detect Version 2.43.3
-	#Pending_DeleteIfOpposite=false||false||0||true||N
 	#PartialClose_AnyToAny=false||false||0||true||N
 	#DirChange_Properties====================================================================================
 	#DirChange_Type=0||0||0||1||N
@@ -561,8 +560,6 @@ function MainConvertVersion ([string]$filePath) {
 	#Detect Version 2.47
 	#SendAlertsToGrammy=true||false||0||true||N
 	#UseOnlyOpenedTrades=true||false||0||true||N
-	#MartingailLotMode=2||0||0||2||N
-	#LotExponent=1.75||1.075||0.025||1.125||N
 	if (Select-String -Path $filePath -Quiet -Pattern "UseOnlyOpenedTrades") {
         $version=$version + ">=2.47"
     }
