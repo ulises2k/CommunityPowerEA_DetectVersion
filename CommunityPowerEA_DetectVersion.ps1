@@ -66,15 +66,13 @@ function MainDetectVersion ([string]$filePath) {
 		$version = $version + ">=2.20"
 	}
 
-	#Detect Version 2.21
+	#Detect Version 2.21, 2.22
 	#Setting file: CP_MT5_EURUSD_Grid8_v2.21.set
+	#Setting file: default_v2.22.set
 	#NewDealOnNewBar=false
 	if (Select-String -Path $filePath -Quiet -Pattern "NewDealOnNewBar") {
 		$version = $version + ">=2.21"
 	}
-
-	#Detect Version 2.22
-	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
 
 	#Detect Version 2.23
 	#MaxFloatingLoss=0
@@ -363,21 +361,24 @@ function MainDetectVersion ([string]$filePath) {
 		$version = $version + ">=2.32.4"
 	}
 
-	#Detect Version 2.33
-	#I don't have the default set of this version, could you share it with me if you have it? @ulises2k
 
-	#Detect Version 2.34
-	#AutoHedge_MaxOrders=0
-	#GlobalAccountTrailingStop_ccy=0
-	#GlobalAccountTrailingStop_perc=0
+	#Detect Version 2.33
+	#AutoHedge_MaxOrders=1
+	#StopLoss_Global========
+	#StopLoss_Pause========
 	#CutomCoefficients=2.2,3.4,4.7
 	#AntiCutomCoefficients=0.95,0.77,0.53
 	#PartialCloseHedge_BothWays=false
 	#PartialCloseHedge_MaxPrOrders=0
-	#PartialCloseHedge_MinProfit=0
-	#PartialCloseHedge_MinProfit_Perc=0
 	#PartialCloseHedge_MinProfit_OppL=0
 	if (Select-String -Path $filePath -Quiet -Pattern "AutoHedge_MaxOrders") {
+		$version = $version + ">=2.33"
+	}
+
+	#Detect Version 2.34
+	#GlobalAccountTrailingStop_ccy=0
+	#GlobalAccountTrailingStop_perc=0
+	if (Select-String -Path $filePath -Quiet -Pattern "GlobalAccountTrailingStop_ccy") {
 		$version = $version + ">=2.34"
 	}
 
