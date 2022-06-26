@@ -71,7 +71,7 @@ function MainDetectVersion ([string]$filePath) {
 	#Setting file: default_v2.22.set
 	#NewDealOnNewBar=false
 	if (Select-String -Path $filePath -Quiet -Pattern "NewDealOnNewBar") {
-		$version = $version + ">=2.21"
+		$version = $version + ">=(2.21,2.22)"
 	}
 
 	#Detect Version 2.23
@@ -640,7 +640,7 @@ $label2.Text = "Version:"
 $listBox = New-Object System.Windows.Forms.ListBox
 $listBox.Location = '5,120'
 $listBox.Height = 140
-$listBox.Width = 700
+$listBox.Width = 760
 $listBox.Anchor = ([System.Windows.Forms.AnchorStyles]::Bottom -bor [System.Windows.Forms.AnchorStyles]::Left -bor [System.Windows.Forms.AnchorStyles]::Right -bor [System.Windows.Forms.AnchorStyles]::Top)
 $listBox.IntegralHeight = $False
 $listBox.AllowDrop = $True
