@@ -564,7 +564,7 @@ function MainDetectVersion ([string]$filePath) {
 		$version = $version + ">=2.47"
 	}
 
-	#Detect Version 2.48
+	#Detect Version 2.48.2
 	#GlobalAccountStopLoss_ccy=0
 	#GlobalAccountStopLoss_perc=0
 	#DL_Properties====== Daily limits =====
@@ -589,6 +589,12 @@ function MainDetectVersion ([string]$filePath) {
 	#CL_DayStartHour=0
 	#CL_CloseOnProfitAndDD=true
 	if (Select-String -Path $filePath -Quiet -Pattern "GlobalAccountStopLoss_ccy") {
+		$version = $version + ">=2.48.2(Beta)"
+	}
+
+	#Detect Version 2.48 (Public Release)
+	#SetDescription=
+	if (Select-String -Path $filePath -Quiet -Pattern "SetDescription") {
 		$version = $version + ">=2.48"
 	}
 
